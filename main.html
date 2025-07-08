@@ -1,0 +1,416 @@
+<head>
+  <meta charset="UTF-8">
+  <title>Clube de Caça - Preçário</title>
+  <style>
+    body {
+      background-color: #1b1b1b;
+      color: #f5f5f5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 20px;
+      margin: 0;
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo img {
+      max-width: 100px;
+      height: auto;
+    }
+
+    h1 {
+      text-align: center;
+      color: #ffd700;
+      border-bottom: 2px solid #ffd700;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+      font-size: 1.8em;
+    }
+
+    .tabs, .subtabs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .tab-button, .subtab-button {
+      background-color: #2a2a2a;
+      color: #ffd700;
+      border: 2px solid transparent;
+      padding: 10px 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-radius: 6px;
+    }
+
+    .tab-button:hover,
+    .subtab-button:hover,
+    .tab-button.active,
+    .subtab-button.active {
+      border-color: #ffd700;
+      background-color: #333;
+    }
+
+    .tab-content, .subtab-content {
+      display: none;
+    }
+
+    .tab-content.active,
+    .subtab-content.active {
+      display: block;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: center;
+      border: 1px solid #444;
+    }
+
+    th {
+      background-color: #2a2a2a;
+    }
+
+    td {
+      background-color: #262626;
+    }
+
+    .categoria {
+      background-color: #444;
+      color: #ffd700;
+      font-weight: bold;
+    }
+
+    input[type="number"] {
+      width: 60px;
+      padding: 5px;
+      background-color: #333;
+      color: #fff;
+      border: 1px solid #555;
+      border-radius: 4px;
+    }
+
+    .aviso {
+  background-color: #333;
+  border-left: 4px solid #ffd700;
+  padding: 15px 20px;
+  margin: 20px auto;
+  max-width: 700px;
+  color: #ffd700;
+  font-weight: bold;
+  font-size: 2.7em; 
+  text-align: center;
+  border-radius: 6px;
+}
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.4em;
+      }
+
+      .tab-button, .subtab-button {
+        flex: 1 1 100%;
+        text-align: center;
+      }
+
+      table, th, td {
+        font-size: 0.85em;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+<div class="logo">
+  <img src="logo.png" alt="Logo do Clube de Caça">
+</div>
+
+<h1>🔥 Clube de Caça - Preçário de Venda 🔥</h1>
+
+<div class="tabs">
+  <button class="tab-button active" onclick="showTab('material')">Materiais</button>
+  <button class="tab-button" onclick="showTab('carcacas')">Carcaças</button>
+  <button class="tab-button" onclick="showTab('peles')">Peles & Garras</button>
+  <button class="tab-button" onclick="showTab('comida')">Comida & Bebida</button>
+  <button class="tab-button" onclick="showTab('compra')">Compra</button>
+</div>
+
+<div id="material" class="tab-content active">
+  <table>
+    <tr class="categoria"><td colspan="3">MATERIAIS</td></tr>
+    <tr><th>Artigo</th><th>Preço de Custo</th><th>Preço de Venda</th></tr>
+    <tr><td>Mosquete</td><td>1.000$</td><td>1.700$</td></tr>
+    <tr><td>Munições</td><td>5$</td><td>6$</td></tr>
+    <tr><td>Faca</td><td>1.500$</td><td>1.600$</td></tr>
+    <tr><td>Machado de Lenhador</td><td>1.500$</td><td>1.600$</td></tr>
+    <tr><td>Machado de Batalha</td><td>4.500$</td><td>4.600$</td></tr>
+    <tr><td>Kit de Caça</td><td>25$</td><td>150$</td></tr>
+  </table>
+</div>
+
+<div id="carcacas" class="tab-content">
+  <div class="subtabs">
+    <button class="subtab-button active" onclick="showSubTab('venda-carcacas', this)">Preço de Venda</button>
+    <button class="subtab-button" onclick="showSubTab('compra-carcacas', this)">Preço de Compra</button>
+  </div>
+
+  <div id="venda-carcacas" class="subtab-content active">
+    <table>
+      <tr class="categoria"><td colspan="4">CARCAÇAS - VENDA</td></tr>
+      <tr><th>Animal</th><th>⭐</th><th>⭐⭐</th><th>⭐⭐⭐</th></tr>
+      <tr><td>VEADO</td><td>45 $</td><td>94 $</td><td>141 $</td></tr>
+      <tr><td>JAVALI</td><td>52 $</td><td>100 $</td><td>160 $</td></tr>
+      <tr><td>LOBO</td><td>58 $</td><td>118 $</td><td>178 $</td></tr>
+      <tr><td>LINCE</td><td>66 $</td><td>136 $</td><td>206 $</td></tr>
+      <tr><td>LEÃO DA MONTANHA</td><td>82 $</td><td>166 $</td><td>249 $</td></tr>
+      <tr><td>LEOPARDO</td><td>86 $</td><td>170 $</td><td>256 $</td></tr>
+      <tr><td>PANTERA NEGRA</td><td>86 $</td><td>171 $</td><td>259 $</td></tr>
+      <tr><td>URSO</td><td>118 $</td><td>237 $</td><td>356 $</td></tr>
+    </table>
+  </div>
+
+  <div id="compra-carcacas" class="subtab-content">
+    <table>
+      <tr class="categoria"><td colspan="4">CARCAÇAS - COMPRA</td></tr>
+      <tr><th>Animal</th><th>⭐</th><th>⭐⭐</th><th>⭐⭐⭐</th></tr>
+      <tr><td>VEADO</td><td>50 $</td><td>70 $</td><td>100 $</td></tr>
+      <tr><td>JAVALI</td><td>60 $</td><td>75 $</td><td>120 $</td></tr>
+      <tr><td>LOBO</td><td>70 $</td><td>90 $</td><td>130 $</td></tr>
+      <tr><td>LINCE</td><td>85 $</td><td>100 $</td><td>160 $</td></tr>
+      <tr><td>LEÃO DA MONTANHA</td><td>105 $</td><td>130 $</td><td>190 $</td></tr>
+      <tr><td>LEOPARDO</td><td>115 $</td><td>140 $</td><td>200 $</td></tr>
+      <tr><td>PANTERA NEGRA</td><td>125 $</td><td>145 $</td><td>210 $</td></tr>
+      <tr><td>URSO</td><td>155 $</td><td>180 $</td><td>290 $</td></tr>
+    </table>
+  </div>
+
+  <!-- AVISO FINAL -->
+  <div class="aviso">
+    ⚠️ Os animais comprados de ⭐ são para esfolar e vender a pele⚠️
+  </div>
+</div>
+
+
+
+<div id="peles" class="tab-content">
+  <div class="subtabs">
+    <button class="subtab-button active" onclick="showSubTab('peles-tab')">Peles</button>
+    <button class="subtab-button" onclick="showSubTab('garras-tab')">Garras</button>
+  </div>
+  <div id="peles-tab" class="subtab-content active">
+    <div class="subtabs">
+      <button class="subtab-button active" onclick="showSubSubTab('peles-venda')">Preço de Venda</button>
+      <button class="subtab-button" onclick="showSubSubTab('peles-compra')">Preço de Compra</button>
+    </div>
+    <div id="peles-venda" class="subtab-content active">
+      <table>
+        <tr class="categoria"><td colspan="2">PELES - VENDA</td></tr>
+        <tr><th>Pele</th><th>Preço</th></tr>
+        <tr><td>Pele de Leão da Montanha</td><td>140 $</td></tr>
+        <tr><td>Pele de Javali</td><td>90 $</td></tr>
+        <tr><td>Pele de Pantera Negra</td><td>145 $</td></tr>
+        <tr><td>Pele de Veado</td><td>80 $</td></tr>
+        <tr><td>Pele de Leopardo</td><td>145 $</td></tr>
+        <tr><td>Pele de Lobo</td><td>100 $</td></tr>
+        <tr><td>Pele de Urso</td><td>200 $</td></tr>
+        <tr><td>Pele de Lince</td><td>115 $</td></tr>
+      </table>
+    </div>
+    <div id="peles-compra" class="subtab-content">
+      <table>
+        <tr class="categoria"><td colspan="2">PELES - COMPRA</td></tr>
+        <tr><th>Pele</th><th>Preço</th></tr>
+        <tr><td>Pele de Leão da Montanha</td><td>110 $</td></tr>
+        <tr><td>Pele de Javali</td><td>70 $</td></tr>
+        <tr><td>Pele de Pantera Negra</td><td>115 $</td></tr>
+        <tr><td>Pele de Veado</td><td>60 $</td></tr>
+        <tr><td>Pele de Leopardo</td><td>115 $</td></tr>
+        <tr><td>Pele de Lobo</td><td>80 $</td></tr>
+        <tr><td>Pele de Urso</td><td>160 $</td></tr>
+        <tr><td>Pele de Lince</td><td>90 $</td></tr>
+      </table>
+    </div>
+  </div>
+  <div id="garras-tab" class="subtab-content">
+    <div class="subtabs">
+      <button class="subtab-button active" onclick="showSubSubTab('garras-venda')">Preço de Venda</button>
+      <button class="subtab-button" onclick="showSubSubTab('garras-compra')">Preço de Compra</button>
+    </div>
+    <div id="garras-venda" class="subtab-content active">
+      <table>
+        <tr class="categoria"><td colspan="2">GARRAS - VENDA</td></tr>
+        <tr><th>Garras</th><th>Preço</th></tr>
+        <tr><td>Garras de Urso</td><td>200 $</td></tr>
+        <tr><td>Garra de Lobo</td><td>100 $</td></tr>
+        <tr><td>Garra de Lince</td><td>115 $</td></tr>
+      </table>
+    </div>
+    <div id="garras-compra" class="subtab-content">
+      <table>
+        <tr class="categoria"><td colspan="2">GARRAS - COMPRA</td></tr>
+        <tr><th>Garras</th><th>Preço</th></tr>
+        <tr><td>Garras de Urso</td><td>160 $</td></tr>
+        <tr><td>Garra de Lobo</td><td>75 $</td></tr>
+        <tr><td>Garra de Lince</td><td>90 $</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div id="comida" class="tab-content">
+  <table>
+    <tr class="categoria"><td colspan="3">COMIDA & BEBIDA</td></tr>
+    <tr><th>Artigo</th><th>Preço de Custo</th><th>Preço de Venda</th></tr>
+    <tr><td>Sandes de Veado</td><td>29 $</td><td>50 $</td></tr>
+    <tr><td>Feijoada de Javali</td><td>X $</td><td>X $</td></tr>
+    <tr><td>Limonada</td><td>25 $</td><td>40 $</td></tr>
+    <tr><td>Sumo Tropical</td><td>23 $</td><td>40 $</td></tr>
+  </table>
+</div>
+
+<div id="compra" class="tab-content">
+  <table>
+    <tr class="categoria"><td colspan="5">COMPRA DE CARCAÇAS POR QUALIDADE</td></tr>
+    <tr><th>Animal</th><th>⭐</th><th>⭐⭐</th><th>⭐⭐⭐</th><th>Quantidade de Cada</th></tr>
+    <tr>
+      <td>VEADO</td>
+      <td class="preco">50 $</td>
+      <td class="preco">85 $</td>
+      <td class="preco">127 $</td>
+      <td><input type="number" min="0" placeholder="1★" oninput="calcularTotal()">
+          <input type="number" min="0" placeholder="2★" oninput="calcularTotal()">
+          <input type="number" min="0" placeholder="3★" oninput="calcularTotal()"></td>
+    </tr>
+    <tr>
+      <td>JAVALI</td>
+      <td class="preco">60 $</td>
+      <td class="preco">90 $</td>
+      <td class="preco">144 $</td>
+      <td><input type="number" min="0" placeholder="1★" oninput="calcularTotal()">
+          <input type="number" min="0" placeholder="2★" oninput="calcularTotal()">
+          <input type="number" min="0" placeholder="3★" oninput="calcularTotal()"></td>
+    </tr>
+    <tr>
+      <td>LOBO</td>
+      <td class="preco">70 $</td>
+      <td class="preco">106 $</td>
+      <td class="preco">160 $</td>
+      <td><input type="number" min="0" placeholder="1★" oninput="calcularTotal()">
+          <input type="number" min="0" placeholder="2★" oninput="calcularTotal()">
+          <input type="number" min="0" placeholder="3★" oninput="calcularTotal()"></td>
+    </tr>
+    <tr>
+      <td>LINCE</td>
+      <td class="preco">85 $</td>
+      <td class="preco">122 $</td>
+      <td class="preco">185 $</td>
+      <td><input type="number" min="0" placeholder="1★" oninput="calcularTotal()">
+          <input type="number" min="0" placeholder="2★" oninput="calcularTotal()">
+          <input type="number" min="0" placeholder="3★" oninput="calcularTotal()"></td>
+    </tr>
+    <tr>
+      <td>LEÃO DA MONTANHA</td>
+      <td class="preco">105 $</td>
+      <td class="preco">149 $</td>
+      <td class="preco">224 $</td>
+      <td><input type="number" min="0" placeholder="1★" oninput="calcularTotal()">
+          <input type="number" min="0" placeholder="2★" oninput="calcularTotal()">
+          <input type="number" min="0" placeholder="3★" oninput="calcularTotal()"></td>
+    </tr>
+    <tr>
+      <td>LEOPARDO</td>
+      <td class="preco">115 $</td>
+      <td class="preco">153 $</td>
+      <td class="preco">230 $</td>
+      <td><input type="number" min="0" placeholder="1★" oninput="calcularTotal()">
+          <input type="number" min="0" placeholder="2★" oninput="calcularTotal()">
+          <input type="number" min="0" placeholder="3★" oninput="calcularTotal()"></td>
+    </tr>
+    <tr>
+      <td>PANTERA NEGRA</td>
+      <td class="preco">125 $</td>
+      <td class="preco">154 $</td>
+      <td class="preco">233 $</td>
+      <td><input type="number" min="0" placeholder="1★" oninput="calcularTotal()">
+          <input type="number" min="0" placeholder="2★" oninput="calcularTotal()">
+          <input type="number" min="0" placeholder="3★" oninput="calcularTotal()"></td>
+    </tr>
+    <tr>
+      <td>URSO</td>
+      <td class="preco">155 $</td>
+      <td class="preco">213 $</td>
+      <td class="preco">320 $</td>
+      <td><input type="number" min="0" placeholder="1★" oninput="calcularTotal()">
+          <input type="number" min="0" placeholder="2★" oninput="calcularTotal()">
+          <input type="number" min="0" placeholder="3★" oninput="calcularTotal()"></td>
+    </tr>
+    <tr class="categoria">
+      <td colspan="4"><strong>TOTAL A PAGAR</strong></td>
+      <td id="total-pagar">0 $</td>
+    </tr>
+  </table>
+</div>
+
+<script>
+  function showTab(tabId, btn) {
+    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+    document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+    document.getElementById(tabId).classList.add('active');
+    btn.classList.add('active');
+
+    if (tabId === 'carcacas') showSubTab('venda-carcacas', document.querySelector('[onclick*="venda-carcacas"]'));
+    if (tabId === 'peles') showSubTab('peles-tab', document.querySelector('[onclick*="peles-tab"]'));
+  }
+
+  function showSubTab(subTabId, btn) {
+    const parent = document.getElementById(subTabId).parentElement;
+    parent.querySelectorAll('.subtab-content').forEach(tab => tab.classList.remove('active'));
+    parent.querySelectorAll('.subtab-button').forEach(b => b.classList.remove('active'));
+    document.getElementById(subTabId).classList.add('active');
+    btn.classList.add('active');
+
+    if (subTabId === 'peles-tab') showSubSubTab('peles-venda', document.querySelector('[onclick*="peles-venda"]'));
+    if (subTabId === 'garras-tab') showSubSubTab('garras-venda', document.querySelector('[onclick*="garras-venda"]'));
+  }
+
+  function showSubSubTab(subSubTabId, btn) {
+    const parent = document.getElementById(subSubTabId).parentElement;
+    parent.querySelectorAll('.subtab-content').forEach(tab => tab.classList.remove('active'));
+    parent.querySelectorAll('.subtab-button').forEach(b => b.classList.remove('active'));
+    document.getElementById(subSubTabId).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  function calcularTotal() {
+    let totalGeral = 0;
+    const linhas = document.querySelectorAll('#compra table tr');
+    linhas.forEach(linha => {
+      const precos = linha.querySelectorAll('.preco');
+      const inputs = linha.querySelectorAll('input[type="number"]');
+      if (precos.length && inputs.length) {
+        inputs.forEach((input, i) => {
+          const precoEl = precos[i];
+          let preco = parseFloat(precoEl.textContent);
+          if (isNaN(preco)) preco = 0;
+          const qtd = parseInt(input.value) || 0;
+          totalGeral += preco * qtd;
+        });
+      }
+    });
+    document.getElementById('total-pagar').textContent = totalGeral.toFixed(2) + ' $';
+  }
+</script>
+
+</body>
+</html>
